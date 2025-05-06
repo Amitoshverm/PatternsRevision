@@ -2,6 +2,7 @@
 
 ### 🔸 Definition:
 Singleton pattern ensure karta hai ki ek class ka **sirf ek object hi create ho** aur uska **global access point** ho.
+Like if we have shared resources like database or logger, we only create only one instance
 
 ---
 
@@ -88,3 +89,31 @@ public class ThreadSafeLogger {
 | Reusability     | High (single instance reused)  |
 | Thread Safety   | Optional (use synchronized or eager init) |
 
+## SpringBoot and Nestjs are the best examples of real world Singleton used 
+Spring library internally use singleton design pattern where instances are created as singleton instances and we call them beans.  
+
+
+## How to create singleton design pattern step-by-step
+1. within the class hide the constructor (Constructor Hiding) 
+2. Create a static object inside the class
+3. Give global access to the static method
+
+```java
+
+public class Singleton {
+    private static Singleton instance;   // Step 2
+    private Singleton() {}               // Step 1
+
+    public static Singleton getInstance() {  // Step 3
+        if (instance == null) {
+            instance = new Singleton();
+        }
+        return instance;
+    }
+}
+```
+
+## Step	Kya kiya?	Kyu kiya?
+1️⃣	private constructor  	Object ko bahar se banne se roka
+2️⃣	static instance      	Sirf ek hi object memory me ho
+3️⃣	static getInstance()    method	Wahi ek object baar-baar mile
