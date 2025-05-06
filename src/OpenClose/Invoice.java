@@ -13,8 +13,8 @@ public class Invoice {
         return amount - discountStrategy.getDiscount(amount);
     }
 
-    // here if we in future want a gold membership then we have to make changes to the code O/C is violated,
-    // we have made a strategy interface, and the everytime we want anything extra like new membership we can create a new class
+    // ** here if we in future want a gold membership then we have to make changes to the code O/C is violated,
+    // ** we have made a strategy interface, and the everytime we want anything extra like new membership we can create a new class
 //    public double calculateDiscount(String customerType) {
 //        if (customerType.equals("REGULAR")) {
 //            return amount * 0.1;
