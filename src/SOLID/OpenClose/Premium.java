@@ -1,4 +1,4 @@
-package OpenClose;
+package SOLID.OpenClose;
 
 public class Premium implements DiscountStrategy{
     @Override

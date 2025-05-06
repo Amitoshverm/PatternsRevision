@@ -1,4 +1,4 @@
-package DependencyInversion;
+package SOLID.DependencyInversion;
 
 public class Sql implements Database{
     @Override
