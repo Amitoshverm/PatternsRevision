@@ -1,4 +1,4 @@
-package SingleResponsibility;
+package SOLID.SingleResponsibility;
 
 public class PrintReport {
 

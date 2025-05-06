@@ -1,4 +1,4 @@
-package OpenClose.BetterEXAMPLE;
+package SOLID.OpenClose.BetterEXAMPLE;
 
 public class Rectangle implements FixedShape{
     double length;

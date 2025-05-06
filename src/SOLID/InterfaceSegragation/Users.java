@@ -1,4 +1,4 @@
-package InterfaceSegragation;
+package SOLID.InterfaceSegragation;
 
 public class Users implements UserAction{
     String name;
