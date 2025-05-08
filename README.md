@@ -241,3 +241,114 @@ Just like ordering pizza:
 
 > Factory Pattern **centralizes object creation** and lets the system be **flexible and scalable** while keeping the client code clean and decoupled.
 
+
+
+
+# 🏗️ Builder Design Pattern
+
+## 📖 Definition (in English):
+Builder Pattern is a creational design pattern that allows you to construct complex objects step-by-step. It separates the construction of a complex object from its representation so that the same construction process can create different representations.
+
+---
+
+## ❓ Problem:
+When a class has too many parameters (especially optional ones), constructor overloading becomes messy and confusing.
+
+```java
+User user = new User("Amitosh", 26, "Ghaziabad", "India", true, false, null);
+```
+This approach is hard to read and error-prone.
+
+---
+
+## ✅ Solution:
+Use Builder Pattern to build an object in multiple steps and make the code more readable.
+
+---
+
+## 🧱 Implementation in Java:
+
+```java
+public class User {
+    private String name;
+    private int age;
+    private String city;
+    private boolean isVerified;
+
+    // Private constructor
+    private User(UserBuilder builder) {
+        this.name = builder.name;
+        this.age = builder.age;
+        this.city = builder.city;
+        this.isVerified = builder.isVerified;
+    }
+
+    public static class UserBuilder {
+        private String name;
+        private int age;
+        private String city;
+        private boolean isVerified;
+
+        public UserBuilder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public UserBuilder setAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public UserBuilder setCity(String city) {
+            this.city = city;
+            return this;
+        }
+
+        public UserBuilder setIsVerified(boolean isVerified) {
+            this.isVerified = isVerified;
+            return this;
+        }
+
+        public User build() {
+            return new User(this);
+        }
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + age + " from " + city + " verified: " + isVerified;
+    }
+}
+```
+
+### 🔥 Usage:
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        User user = new User.UserBuilder()
+                            .setName("Amitosh")
+                            .setAge(26)
+                            .setCity("Ghaziabad")
+                            .setIsVerified(true)
+                            .build();
+
+        System.out.println(user);
+    }
+}
+```
+
+---
+
+## 📌 When to Use:
+- When you need to create objects with many optional parameters
+- When constructor overloading gets out of hand
+- When you want to build immutable objects in a clean way
+
+---
+
+## 🧠 Key Benefits:
+- More readable and maintainable object construction
+- Avoids telescoping constructors problem
+- Better control over object creation process
+
