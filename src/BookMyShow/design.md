@@ -34,3 +34,6 @@ Movie
 Cinema hall
 - A user can also cancel or update a booking
 - A user cannot book or cancel after the cutoff time which is 1 hour before the movie starts
+
+
+#### This is done in nestjs, with repo name movie-booking
