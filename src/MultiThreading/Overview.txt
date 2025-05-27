@@ -1,0 +1,5 @@
+This module consist of concept of multithreading.
+
+1. How threads are created
+2. Ways to create Thread (implementing Runnable interface or extending Thread class)
+3. How to work with threads
