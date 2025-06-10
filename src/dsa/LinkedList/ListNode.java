@@ -13,8 +13,11 @@ public class ListNode {
 
     public static void main(String[] args) {
         int[] arr = {1, 2, 4, 5, 6};
+        int[] arr1 = {9, 8, 7, 10};
 
         ListNode head = createLL(arr);
+        ListNode head2 = createLL(arr1);
+        printLL(head2);
 //        printLL(head);
 
 //        ListNode newHead = insertAtHead(head, 9);
@@ -26,8 +29,12 @@ public class ListNode {
 //        System.out.println(searchK(null, 0));
 //        ListNode newHead = deleteNode(head, 1);
 //        printLL(newHead);
-        ListNode newHead = reverse(head);
-        printLL(newHead);
+//        ListNode newHead = reverse(head);
+//        printLL(newHead);
+
+        ListNode h1 = merge(head, head2);
+        printLL(h1);
+
     }
 
     public static ListNode createLL (int[] arr) {
@@ -132,5 +139,27 @@ public class ListNode {
             curr = next;
         }
         return prev;
+    }
+
+    public static ListNode merge(ListNode h1, ListNode h2) {
+        if (h2 == null) {
+            return h1;
+        }
+        else if (h1 == null) {
+            return h2;
+        }
+        else if (h1 == null && h2 == null) {
+            return null;
+        }
+
+        ListNode curr = h1;
+        while (h2 != null) {
+            ListNode temp = h2;
+            h2 = h2.next;
+            temp.next = curr.next;
+            curr.next = temp;
+            curr.next = curr.next.next;
+        }
+        return h1;
     }
 }
