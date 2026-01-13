@@ -352,3 +352,14 @@ public class Main {
 - Avoids telescoping constructors problem
 - Better control over object creation process
 
+## Java Revision Notes
+**what is java programming ?** 
+- java is a class-based, object-oriented programming language that is designed to develop platform independent applications
+
+**features of java**
+- what actually happens when we run a java program is that the source code is compiled to bytecode by a java compiler and this byte code is interpreted by JVM which makes it platform independent.
+_so thats why the key feature is platform independent,
+it is object oriented programming language_
+
+![img.png](src/resource/static/img.png)
+
