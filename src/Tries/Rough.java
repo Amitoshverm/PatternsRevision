@@ -16,6 +16,8 @@ public class Rough {
         insert('o', arr);
         insert('s', arr);
 
+
+
         System.out.println(Arrays.toString(arr));
     }
 
