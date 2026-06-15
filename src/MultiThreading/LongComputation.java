@@ -4,34 +4,33 @@ import java.math.BigInteger;
 
 public class LongComputation {
     public static void main(String[] args) {
-        Power t1 = new  Power(23, 59);
+        Power t1 = new Power(new BigInteger("1232344"), new BigInteger("119"));
         t1.start();
-//        t1.interrupt();
+        t1.interrupt();
     }
 
     public static class Power extends Thread {
-        private long power;
-        private long base;
+        private BigInteger base;
+        private BigInteger power;
 
-        public Power(long base, long power) {
-            this.power = power;
+        public  Power(BigInteger base, BigInteger power) {
             this.base = base;
+            this.power = power;
         }
 
-        @Override
         public void run() {
-            System.out.println(pow(base, power));
+            System.out.println(base+ "^"+ power+ "=" + getPower(base, power));
         }
-
-        public long pow( long base, long power) {
-            for (long i = 1; i < power; i++) {
-                if (Thread.interrupted()) {
-                    System.out.println("interrupted");
-                    return 0;
+        public BigInteger getPower(BigInteger base, BigInteger power) {
+            BigInteger res =  BigInteger.ONE;
+            for (BigInteger i = BigInteger.ZERO; i.compareTo(base) != 0; i = i.add(BigInteger.ONE)) {
+                if (Thread.currentThread().isInterrupted()) {
+                    System.out.println("Thread is interrupted");
+                    return BigInteger.ZERO;
                 }
-                base = base * base;
+                res = res.multiply(base);
             }
-            return base;
+            return res;
         }
     }
 }
