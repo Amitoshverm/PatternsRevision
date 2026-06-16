@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ThreeSum {
     public static void main(String[] args) {
-        int[] arr = {-1, 0, 1, 2, -1, -4}; // {-4, -1, -1, 0, 1, 2}
+        int[] arr = {-2,0,1,1,2}; // {-4, -1, -1, 0, 1, 2}
         System.out.println(threeSum(arr));
     }
 
