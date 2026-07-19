@@ -25,7 +25,7 @@ public class LongComputation {
         }
         public BigInteger getPower(BigInteger base, BigInteger power) {
             BigInteger res =  BigInteger.ONE;
-            for (BigInteger i = BigInteger.ZERO; i.compareTo(base) != 0; i = i.add(BigInteger.ONE)) {
+            for (BigInteger i = BigInteger.ZERO; i.compareTo(power) != 0; i = i.add(BigInteger.ONE)) {
 //                if (Thread.currentThread().isInterrupted()) { // to use Thread.interrupt we need isInterrupted
 //                    System.out.println("Thread is interrupted");
 //                    return BigInteger.ZERO;
